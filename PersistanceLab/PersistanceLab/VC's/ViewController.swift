@@ -11,6 +11,9 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var searchQuery = ""
     
     var images = [Images]() {
         didSet {
@@ -22,7 +25,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadData()
+        print(FileManager.getDocumentsDirectory())
+        searchBar.delegate = self
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        loadData(searchQuery: "yellow flowers")
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -33,13 +40,14 @@ class ViewController: UIViewController {
         detailVC.imageDetail = images[indexPath.row]
     }
 
-    func loadData() {
-        ImageAPIClient.getImages { (result) in
+    func loadData(searchQuery: String) {
+        ImageAPIClient.getImages(for: searchQuery) { (result) in
             switch result {
             case .failure(_):
                 print("no data found")
             case .success(let image):
                 self.images = image
+                dump(image)
             }
         }
     }
@@ -59,6 +67,25 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         return cell
     }
     
-    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let interItemSpacing: CGFloat = 10 // space between items
+        let maxWidth = UIScreen.main.bounds.size.width // device's width
+        let numberOfitems: CGFloat = 3 // items
+        let totalSpacing: CGFloat = numberOfitems * interItemSpacing
+        let itemWidth: CGFloat = (maxWidth - totalSpacing) / numberOfitems
+        
+        return CGSize(width: itemWidth, height: itemWidth)
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let searchText = searchBar.text else {
+            print("no text")
+            return
+        }
+        loadData(searchQuery: searchText)
+    }
 }
 

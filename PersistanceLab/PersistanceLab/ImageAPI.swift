@@ -10,7 +10,7 @@ import Foundation
 import NetworkHelper
 
 struct ImageAPIClient {
-    static func getImages(completion: @escaping (Result<[Images], AppError>) -> ()) {
+    static func getImages(for searchQuery: String, completion: @escaping (Result<[Images], AppError>) -> ()) {
     
         let endpointURL = "https://pixabay.com/api/?key=14937007-dcbfa908ac4092d4eac3223ed&q=yellow+flowers&image_type=photo"
         
