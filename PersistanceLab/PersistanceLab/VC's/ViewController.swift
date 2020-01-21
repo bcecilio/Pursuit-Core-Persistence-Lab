@@ -13,8 +13,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var searchQuery = ""
-    
     var images = [Images]() {
         didSet {
             DispatchQueue.main.async {
@@ -22,14 +20,20 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    var searchQuery = "" {
+        didSet {
+            loadData(searchQuery: searchQuery)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(FileManager.getDocumentsDirectory())
         searchBar.delegate = self
         collectionView.dataSource = self
         collectionView.delegate = self
-        loadData(searchQuery: "yellow flowers")
+        loadData(searchQuery: searchQuery)
+        print(FileManager.getDocumentsDirectory())
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -69,12 +73,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let interItemSpacing: CGFloat = 10 // space between items
-        let maxWidth = UIScreen.main.bounds.size.width // device's width
-        let numberOfitems: CGFloat = 3 // items
-        let totalSpacing: CGFloat = numberOfitems * interItemSpacing
-        let itemWidth: CGFloat = (maxWidth - totalSpacing) / numberOfitems
-        
+        let maxWidth: CGFloat = UIScreen.main.bounds.size.width
+        let itemWidth: CGFloat = maxWidth * 0.30
         return CGSize(width: itemWidth, height: itemWidth)
     }
 }

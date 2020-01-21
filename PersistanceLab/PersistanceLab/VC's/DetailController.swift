@@ -10,10 +10,19 @@ import UIKit
 
 class DetailController: UIViewController {
     
+    @IBOutlet weak var detailImageView: UIImageView!
+    
     var imageDetail: Images?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
     }
+    
+//    func updateUI() {
+//        guard let image = imageDetail else {
+//            return
+//        }
+//        let detailName = image.
+//    }
 }

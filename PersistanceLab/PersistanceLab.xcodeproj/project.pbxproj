@@ -21,6 +21,8 @@
 		B7D5B6A323D1087D00970C0B /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5B6A223D1087D00970C0B /* DetailController.swift */; };
 		B7D5B6A523D1088E00970C0B /* FavoritesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5B6A423D1088E00970C0B /* FavoritesController.swift */; };
 		B7D5B6A723D108A600970C0B /* UIImage + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7D5B6A623D108A600970C0B /* UIImage + Alerts.swift */; };
+		B7EE1A1C23D7472D0038A827 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE1A1B23D7472D0038A827 /* FileManager.swift */; };
+		B7EE1A1E23D7474C0038A827 /* PersistanceHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7EE1A1D23D7474C0038A827 /* PersistanceHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +41,8 @@
 		B7D5B6A223D1087D00970C0B /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		B7D5B6A423D1088E00970C0B /* FavoritesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesController.swift; sourceTree = "<group>"; };
 		B7D5B6A623D108A600970C0B /* UIImage + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Alerts.swift"; sourceTree = "<group>"; };
+		B7EE1A1B23D7472D0038A827 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		B7EE1A1D23D7474C0038A827 /* PersistanceHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				B7D5B6A623D108A600970C0B /* UIImage + Alerts.swift */,
 				B7CED08723D642F600C3CF97 /* ImageAPI.swift */,
 				B7CED08923D6449800C3CF97 /* ImageData.swift */,
+				B7EE1A1B23D7472D0038A827 /* FileManager.swift */,
+				B7EE1A1D23D7474C0038A827 /* PersistanceHelper.swift */,
 				B7CED08623D642B900C3CF97 /* SecretKey */,
 				B7D5B6A123D1086500970C0B /* VC's */,
 				B7D5B69023D104B300970C0B /* Main.storyboard */,
@@ -190,9 +196,11 @@
 				B77ECC5A23D3F56F00155BA2 /* SecretKey.swift in Sources */,
 				B7CED08A23D6449800C3CF97 /* ImageData.swift in Sources */,
 				B7D5B68B23D104B300970C0B /* AppDelegate.swift in Sources */,
+				B7EE1A1C23D7472D0038A827 /* FileManager.swift in Sources */,
 				B7CED08823D642F600C3CF97 /* ImageAPI.swift in Sources */,
 				B7D5B68D23D104B300970C0B /* SceneDelegate.swift in Sources */,
 				B71A71D823D6B56800127E81 /* ImageCell.swift in Sources */,
+				B7EE1A1E23D7474C0038A827 /* PersistanceHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,7 +23,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="76T-0p-Lcn">
                                 <rect key="frame" x="0.0" y="144" width="414" height="669"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OtB-wd-qpq">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="OtB-wd-qpq">
                                     <size key="itemSize" width="99" height="99"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -37,7 +37,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oon-e4-C8m">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Oon-e4-C8m">
                                                     <rect key="frame" x="0.0" y="0.0" width="99" height="99"/>
                                                 </imageView>
                                             </subviews>
@@ -72,6 +72,7 @@
                     <navigationItem key="navigationItem" id="FkV-mk-XJh"/>
                     <connections>
                         <outlet property="collectionView" destination="76T-0p-Lcn" id="8hk-fX-kqB"/>
+                        <outlet property="searchBar" destination="6VY-bM-Bs7" id="hPy-ym-q0u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -119,40 +120,39 @@
             </objects>
             <point key="canvasLocation" x="1818.840579710145" y="468.75"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail Controller-->
         <scene sceneID="rZI-Xt-EkD">
             <objects>
-                <viewController id="1vt-La-PsZ" sceneMemberID="viewController">
+                <viewController id="1vt-La-PsZ" customClass="DetailController" customModule="PersistanceLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5RQ-0t-sUN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kwB-02-bxM">
-                                <rect key="frame" x="20" y="179" width="374" height="262"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="374" id="Y8V-0h-3rC"/>
-                                </constraints>
+                                <rect key="frame" x="20" y="88" width="374" height="353"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click the image to favorite!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfb-jV-9nD">
-                                <rect key="frame" x="8" y="150" width="398" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="so2-qH-41n">
+                                <rect key="frame" x="184" y="516" width="46" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <state key="normal" image="suit.heart" catalog="system"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="bNr-3l-7Ka" firstAttribute="trailing" secondItem="Mfb-jV-9nD" secondAttribute="trailing" constant="8" id="8Vk-8i-tm5"/>
-                            <constraint firstItem="Mfb-jV-9nD" firstAttribute="leading" secondItem="bNr-3l-7Ka" secondAttribute="leading" constant="8" id="Crm-0o-E1g"/>
-                            <constraint firstItem="kwB-02-bxM" firstAttribute="top" secondItem="Mfb-jV-9nD" secondAttribute="bottom" constant="8" id="OT7-8Y-Xyf"/>
-                            <constraint firstItem="Mfb-jV-9nD" firstAttribute="top" secondItem="bNr-3l-7Ka" secondAttribute="top" constant="62" id="TJa-M2-156"/>
-                            <constraint firstItem="bNr-3l-7Ka" firstAttribute="trailing" secondItem="kwB-02-bxM" secondAttribute="trailing" constant="20" id="UIe-S8-oIT"/>
-                            <constraint firstItem="kwB-02-bxM" firstAttribute="leading" secondItem="bNr-3l-7Ka" secondAttribute="leading" constant="20" id="ht4-Zy-ita"/>
-                            <constraint firstItem="bNr-3l-7Ka" firstAttribute="bottom" secondItem="kwB-02-bxM" secondAttribute="bottom" constant="372" id="qad-kg-L0u"/>
+                            <constraint firstItem="kwB-02-bxM" firstAttribute="top" secondItem="bNr-3l-7Ka" secondAttribute="top" id="CJE-LM-jbu"/>
+                            <constraint firstItem="so2-qH-41n" firstAttribute="top" secondItem="kwB-02-bxM" secondAttribute="bottom" constant="75" id="GhW-eU-hEo"/>
+                            <constraint firstItem="bNr-3l-7Ka" firstAttribute="trailing" secondItem="so2-qH-41n" secondAttribute="trailing" constant="184" id="W7f-6e-0H1"/>
+                            <constraint firstItem="kwB-02-bxM" firstAttribute="height" secondItem="5RQ-0t-sUN" secondAttribute="height" multiplier="0.393973" id="ajp-4M-Ycq"/>
+                            <constraint firstItem="bNr-3l-7Ka" firstAttribute="trailing" secondItem="kwB-02-bxM" secondAttribute="trailing" constant="20" id="gt2-pD-lqz"/>
+                            <constraint firstItem="so2-qH-41n" firstAttribute="leading" secondItem="bNr-3l-7Ka" secondAttribute="leading" constant="184" id="lgv-jX-Pxy"/>
+                            <constraint firstItem="kwB-02-bxM" firstAttribute="leading" secondItem="bNr-3l-7Ka" secondAttribute="leading" constant="20" id="w4c-Hk-COA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bNr-3l-7Ka"/>
                     </view>
                     <navigationItem key="navigationItem" id="uoN-Oj-5r6"/>
+                    <connections>
+                        <outlet property="detailImageView" destination="kwB-02-bxM" id="PeE-O2-nPI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Daq-eX-Jht" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -216,6 +216,9 @@
             <point key="canvasLocation" x="908.69565217391312" y="468.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="suit.heart" catalog="system" width="64" height="54"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UA3-px-NzB"/>
     </inferredMetricsTieBreakers>
