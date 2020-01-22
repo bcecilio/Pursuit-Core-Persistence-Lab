@@ -59,6 +59,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B776952E23D8E1A1007C1691 /* Persistance Helper */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Persistance Helper";
+			sourceTree = "<group>";
+		};
+		B776952F23D8E1BC007C1691 /* Image API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Image API";
+			sourceTree = "<group>";
+		};
+		B776953023D8E1DE007C1691 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B7D5B68A23D104B300970C0B /* AppDelegate.swift */,
+				B7D5B68C23D104B300970C0B /* SceneDelegate.swift */,
+				B7D5B69323D104B700970C0B /* Assets.xcassets */,
+				B7D5B69523D104B700970C0B /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		B7CED08623D642B900C3CF97 /* SecretKey */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,18 +111,17 @@
 		B7D5B68923D104B300970C0B /* PersistanceLab */ = {
 			isa = PBXGroup;
 			children = (
-				B7D5B68A23D104B300970C0B /* AppDelegate.swift */,
-				B7D5B68C23D104B300970C0B /* SceneDelegate.swift */,
-				B7D5B6A623D108A600970C0B /* UIImage + Alerts.swift */,
 				B7CED08723D642F600C3CF97 /* ImageAPI.swift */,
 				B7CED08923D6449800C3CF97 /* ImageData.swift */,
+				B7D5B6A623D108A600970C0B /* UIImage + Alerts.swift */,
 				B7EE1A1B23D7472D0038A827 /* FileManager.swift */,
 				B7EE1A1D23D7474C0038A827 /* PersistanceHelper.swift */,
+				B776953023D8E1DE007C1691 /* Supporting Files */,
+				B776952F23D8E1BC007C1691 /* Image API */,
+				B776952E23D8E1A1007C1691 /* Persistance Helper */,
 				B7CED08623D642B900C3CF97 /* SecretKey */,
 				B7D5B6A123D1086500970C0B /* VC's */,
 				B7D5B69023D104B300970C0B /* Main.storyboard */,
-				B7D5B69323D104B700970C0B /* Assets.xcassets */,
-				B7D5B69523D104B700970C0B /* LaunchScreen.storyboard */,
 				B7D5B69823D104B700970C0B /* Info.plist */,
 			);
 			path = PersistanceLab;
@@ -109,8 +133,8 @@
 				B7D5B68E23D104B300970C0B /* ViewController.swift */,
 				B71A71D723D6B56800127E81 /* ImageCell.swift */,
 				B7D5B6A223D1087D00970C0B /* DetailController.swift */,
-				B776952C23D8DE9E007C1691 /* FavortieImageTableViewCell.swift */,
 				B7D5B6A423D1088E00970C0B /* FavoritesController.swift */,
+				B776952C23D8DE9E007C1691 /* FavortieImageTableViewCell.swift */,
 			);
 			path = "VC's";
 			sourceTree = "<group>";

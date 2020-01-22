@@ -22,11 +22,19 @@ class FavoritesController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         loadFavoriteImages()
     }
     
     func loadFavoriteImages() {
-        
+        do {
+            favoriteImages = try PersistanceHelper.loadImage()
+            print("fav images loaded")
+            dump(favoriteImages)
+        } catch {
+            print("could not load saves images")
+        }
     }
 }
 
@@ -44,5 +52,7 @@ extension FavoritesController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 150
+    }
 }

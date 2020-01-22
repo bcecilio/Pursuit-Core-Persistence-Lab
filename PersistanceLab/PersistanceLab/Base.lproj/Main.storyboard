@@ -79,10 +79,10 @@
             </objects>
             <point key="canvasLocation" x="1818.840579710145" y="-228.34821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Favorites Controller-->
         <scene sceneID="ZZk-9J-LRb">
             <objects>
-                <viewController id="lqw-21-0e3" sceneMemberID="viewController">
+                <viewController id="lqw-21-0e3" customClass="FavoritesController" customModule="PersistanceLab" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W1j-Rc-msh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,14 +91,28 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="1hf-IY-JkX">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="favoriteImageCell" rowHeight="158" id="1hf-IY-JkX" customClass="FavortieImageTableViewCell" customModule="PersistanceLab" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="158"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1hf-IY-JkX" id="hmC-jv-nha">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="158"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GZe-LF-a9f">
+                                                    <rect key="frame" x="20" y="24" width="110" height="110"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="110" id="qQm-zH-Tpj"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="GZe-LF-a9f" firstAttribute="top" secondItem="hmC-jv-nha" secondAttribute="topMargin" constant="13" id="18L-Ud-gTb"/>
+                                                <constraint firstItem="GZe-LF-a9f" firstAttribute="leading" secondItem="hmC-jv-nha" secondAttribute="leadingMargin" id="JkA-9w-jso"/>
+                                                <constraint firstItem="GZe-LF-a9f" firstAttribute="centerY" secondItem="hmC-jv-nha" secondAttribute="centerY" id="RhH-hP-YWs"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="favoriteImageView" destination="GZe-LF-a9f" id="vjS-L3-21U"/>
                                             <segue destination="1vt-La-PsZ" kind="show" trigger="accessoryAction" id="B7p-Ea-8Z1"/>
                                         </connections>
                                     </tableViewCell>
@@ -115,6 +129,9 @@
                         <viewLayoutGuide key="safeArea" id="lOJ-4y-KJQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="2qU-F7-fmG"/>
+                    <connections>
+                        <outlet property="tableView" destination="Uk0-tF-G8v" id="Wlg-hB-Dnl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4gA-fm-cwH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -223,6 +240,6 @@
         <image name="suit.heart" catalog="system" width="64" height="54"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UA3-px-NzB"/>
+        <segue reference="B7p-Ea-8Z1"/>
     </inferredMetricsTieBreakers>
 </document>

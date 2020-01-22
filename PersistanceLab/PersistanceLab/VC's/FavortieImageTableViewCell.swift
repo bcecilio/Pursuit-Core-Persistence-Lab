@@ -14,5 +14,19 @@ class FavortieImageTableViewCell: UITableViewCell {
     
     func configureCell(for imageData: Images) {
         
+        let imageURL = imageData.largeImageURL.description
+        
+        favoriteImageView.getImage(with: imageURL) { [weak self] (result) in
+            switch result {
+            case .failure(_):
+                DispatchQueue.main.async {
+                    self?.favoriteImageView.image = UIImage(systemName: "exclamationmark.fill")
+                }
+            case .success(let image):
+                DispatchQueue.main.async {
+                    self?.favoriteImageView.image = image
+                }
+            }
+        }
     }
 }

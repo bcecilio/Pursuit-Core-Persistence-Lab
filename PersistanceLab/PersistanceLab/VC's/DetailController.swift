@@ -16,7 +16,7 @@ class DetailController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        updateUI()
     }
     
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
@@ -26,7 +26,7 @@ class DetailController: UIViewController {
         }
         do {
             try? PersistanceHelper.saveImage(image: favoriteImage)
-            print("image saved")
+            showAlert(title: "Saved", message: "Image saved successfully!")
         } catch {
             print("could not load saved image")
         }
@@ -38,10 +38,9 @@ class DetailController: UIViewController {
             return
         }
         
-        let picture = image.largeImageURL
-        let imageURL = "https://pixabay.com/api/?key=14937007-dcbfa908ac4092d4eac3223ed&q=\(picture)"
+        let picture = image.largeImageURL.description
         
-        detailImageView.getImage(with: imageURL, writeTo: .documentsDirectory) { [weak self] (result) in
+        detailImageView.getImage(with: picture) { [weak self] (result) in
             switch result {
             case .failure(_):
                 DispatchQueue.main.async {
