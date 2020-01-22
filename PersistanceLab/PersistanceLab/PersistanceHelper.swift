@@ -33,7 +33,7 @@ class PersistanceHelper {
         }
     }
     
-    static private func saveImage(image: Images) throws {
+    static public func saveImage(image: Images) throws {
         events.append(image)
         do {
             try save()

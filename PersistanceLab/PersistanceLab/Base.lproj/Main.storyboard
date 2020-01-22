@@ -135,6 +135,9 @@
                                 <rect key="frame" x="184" y="516" width="46" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" image="suit.heart" catalog="system"/>
+                                <connections>
+                                    <action selector="favoriteButtonPressed:" destination="1vt-La-PsZ" eventType="touchUpInside" id="f7v-m4-lTS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

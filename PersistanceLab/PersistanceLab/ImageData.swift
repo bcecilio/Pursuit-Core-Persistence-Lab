@@ -16,7 +16,5 @@ struct Welcome: Codable {
 
 struct Images: Codable {
     let largeImageURL: String
-    let webformatHeight, webformatWidth, likes, imageWidth: Int
     let favorites, imageSize, previewWidth: Int
-    let userImageURL, previewURL: String
 }

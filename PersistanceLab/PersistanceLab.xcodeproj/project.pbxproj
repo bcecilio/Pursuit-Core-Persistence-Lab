@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B71A71D823D6B56800127E81 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71A71D723D6B56800127E81 /* ImageCell.swift */; };
+		B776952D23D8DE9E007C1691 /* FavortieImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B776952C23D8DE9E007C1691 /* FavortieImageTableViewCell.swift */; };
 		B77ECC5A23D3F56F00155BA2 /* SecretKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77ECC5923D3F56F00155BA2 /* SecretKey.swift */; };
 		B7CED08823D642F600C3CF97 /* ImageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CED08723D642F600C3CF97 /* ImageAPI.swift */; };
 		B7CED08A23D6449800C3CF97 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7CED08923D6449800C3CF97 /* ImageData.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		B71A71D723D6B56800127E81 /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		B776952C23D8DE9E007C1691 /* FavortieImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavortieImageTableViewCell.swift; sourceTree = "<group>"; };
 		B77ECC5923D3F56F00155BA2 /* SecretKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKey.swift; sourceTree = "<group>"; };
 		B7CED08723D642F600C3CF97 /* ImageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPI.swift; sourceTree = "<group>"; };
 		B7CED08923D6449800C3CF97 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				B7D5B68E23D104B300970C0B /* ViewController.swift */,
 				B71A71D723D6B56800127E81 /* ImageCell.swift */,
 				B7D5B6A223D1087D00970C0B /* DetailController.swift */,
+				B776952C23D8DE9E007C1691 /* FavortieImageTableViewCell.swift */,
 				B7D5B6A423D1088E00970C0B /* FavoritesController.swift */,
 			);
 			path = "VC's";
@@ -196,6 +199,7 @@
 				B77ECC5A23D3F56F00155BA2 /* SecretKey.swift in Sources */,
 				B7CED08A23D6449800C3CF97 /* ImageData.swift in Sources */,
 				B7D5B68B23D104B300970C0B /* AppDelegate.swift in Sources */,
+				B776952D23D8DE9E007C1691 /* FavortieImageTableViewCell.swift in Sources */,
 				B7EE1A1C23D7472D0038A827 /* FileManager.swift in Sources */,
 				B7CED08823D642F600C3CF97 /* ImageAPI.swift in Sources */,
 				B7D5B68D23D104B300970C0B /* SceneDelegate.swift in Sources */,

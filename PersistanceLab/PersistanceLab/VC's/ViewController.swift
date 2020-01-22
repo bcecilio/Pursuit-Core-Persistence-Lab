@@ -45,12 +45,12 @@ class ViewController: UIViewController {
     }
 
     func loadData(searchQuery: String) {
-        ImageAPIClient.getImages(for: searchQuery) { (result) in
+        ImageAPIClient.getImages(for: searchQuery) { [weak self] (result) in
             switch result {
             case .failure(_):
                 print("no data found")
             case .success(let image):
-                self.images = image
+                self?.images = image
                 dump(image)
             }
         }
@@ -68,6 +68,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFl
         }
         let imageCell = images[indexPath.row]
         cell.configureCell(for: imageCell)
+        cell.layer.cornerRadius = 7
         return cell
     }
     
@@ -85,7 +86,7 @@ extension ViewController: UISearchBarDelegate {
             print("no text")
             return
         }
-        loadData(searchQuery: searchText)
+        searchQuery = searchText
     }
 }
 
